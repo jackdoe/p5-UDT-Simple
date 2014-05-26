@@ -55,7 +55,7 @@ void
 UDT__Simple::connect(char *host, short port)
 
 int
-UDT__Simple::send(SV *data)
+UDT__Simple::send(SV *data,int offset = 0)
 
 SV *
 UDT__Simple::recv(int bytes)

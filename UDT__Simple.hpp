@@ -92,15 +92,17 @@ public:
         SET_OR_CROAK(UDT_SNDTIMEO,value);
     }
 #undef SET_OR_CROAK
-    int send(SV *data) {
+    int send(SV *data, int offset = 0) {
         STRLEN len;
         char *ptr;
         ptr = SvPV(data, len);
+        if (len == 0 || offset >= len)
+            return 0;
         int rc;
         if (this->_type == SOCK_DGRAM)
-            rc = UDT::sendmsg(this->_socket, ptr, len);
+            rc = UDT::sendmsg(this->_socket, ptr + offset, len - offset);
         else
-            rc = UDT::send(this->_socket, ptr, len,0);
+            rc = UDT::send(this->_socket, ptr + offset, len - offset,0);
         if (rc == UDT::ERROR)
             croak(UDT::getlasterror().getErrorMessage());
         if (rc == 0)
