@@ -30,7 +30,16 @@ UDT::Simple - simplified Perl bindings for UDT(reliable UDP based application le
     $u->udp_rcvbuf(4000);
 
     $u->connect("localhost","12344");
+    # if the socket is SOCK_STREAM send() might not send the whole thing
+    my $message = "hello world";
+    my $offset = 0;
+    while (lenght($message) - $offset > 0) {
+        $offset += $u->send($message,$offset);
+    }
     $u->send("hello world")
+
+    # if it is SOCK_DGRAM the whole message will be sent
+    $u->send($message);
     $u->close();
 
 =head1 DESCRIPTION
