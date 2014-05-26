@@ -106,7 +106,7 @@ public:
         if (rc == UDT::ERROR)
             croak(UDT::getlasterror().getErrorMessage());
         if (rc == 0)
-            croak("sendtimed out");
+            croak("send timed out");
         return rc;
     }
 
