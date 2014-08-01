@@ -1,6 +1,5 @@
 language: perl
 perl:
-  - "5.19"
   - "5.18"
   - "5.16"
   - "5.14"
@@ -9,4 +8,4 @@ perl:
   - "5.8"
 
 before_install:
-  - apt-get install libudt-dev
+  - sudo apt-get install libudt-dev
