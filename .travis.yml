@@ -10,6 +10,3 @@ perl:
 
 before_install:
   - apt-get install libudt-dev
-
-script:
-  prove -Ilib -r t
