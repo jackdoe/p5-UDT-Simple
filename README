@@ -15,8 +15,10 @@ decide whether fixes for the module are worth downloading.
 INSTALLATION
 
 To install this module type the following:
+   install libudt-dev
 
    perl Makefile.PL
+   # if it cannot find libudt's includes do: UDT_INCLUDE=/custom/path/to/udt.h perl Makefile.PL
    make
    make test
    make install
@@ -25,7 +27,6 @@ DEPENDENCIES
 
 This module requires these other modules and libraries:
 
-  blah blah blah
 
 COPYRIGHT AND LICENCE
 

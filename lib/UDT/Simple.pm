@@ -80,6 +80,16 @@ UDT::Simple - simplified Perl bindings for UDT(reliable UDP based application le
     $u->send($message);
     $u->close();
 
+=head1 INSTALLATION
+
+ apt-get install libudt-dev
+ perl Makefile.PL
+ make && make install
+
+or download libudt, install it, and run
+
+ UDT_INCLUDE=/custom/path/to/udt.h perl Makefile.pl && make && make install
+
 =head1 DESCRIPTION
 
 quote from L<http://udt.sourceforge.net/udt4/index.htm>:

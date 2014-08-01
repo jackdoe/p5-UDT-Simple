@@ -13,10 +13,9 @@ WriteMakefile(
     CC                => 'g++',
     DEFINE            => '', # e.g., '-DHAVE_SOMETHING'
     CCFLAGS           => '-Wno-deprecated-declarations',
-    INC               => "-I. -I/usr/include -I/usr/local/include -I/usr/include/udt -I/usr/local/include/udt $ENV{UDT_INCLUDE}", # e.g., '-I. -I/usr/include/other'
+    INC               => "-I. -I/usr/include -I/usr/local/include -I/usr/include/udt -I/usr/local/include/udt -I$ENV{UDT_INCLUDE}", # e.g., '-I. -I/usr/include/other'
 	# Un-comment this if you add C files to link with later:
     # OBJECT            => '$(O_FILES)', # link all the C files too
     'XSOPT'             => '-C++',
     'TYPEMAPS'          => ['perlobject.map' ],
-
 );
