@@ -8,5 +8,6 @@ README
 Simple.xs
 t/stream.t
 t/UDT-Simple.t
+inc/Devel/CheckLib.pm
 typemap
 UDT__Simple.hpp
