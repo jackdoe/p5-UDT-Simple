@@ -1,5 +1,9 @@
 use 5.012004;
 use ExtUtils::MakeMaker;
+use lib 'inc';
+use Devel::CheckLib;
+check_lib_or_exit(lib => 'udt');
+
 # See lib/ExtUtils/MakeMaker.pm for details of how to influence
 # the contents of the Makefile that is written.
 WriteMakefile(
