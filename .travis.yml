@@ -1,8 +1,6 @@
 language: perl
 -perl:
- - "5.18.0-thread-multi"
+ - "5.18.0-thr"
 
 before_install:
-  - perlbrew install --thread --notest perl-blead
-  - perlbrew use perl-blead
   - sudo apt-get install libudt-dev
